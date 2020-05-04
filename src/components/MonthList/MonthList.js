@@ -6,7 +6,7 @@ class MonthList extends Component{
         return(
             <div>
                 <p>MonthList</p>
-                <p><MonthItem /></p>
+                <MonthItem />
             </div>
         ) // end return
     } // // render
