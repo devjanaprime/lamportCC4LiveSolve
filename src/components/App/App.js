@@ -6,11 +6,14 @@ import MonthList from '../MonthList/MonthList';
 class App extends Component {
 
   state = {
-    months: []
+    months: [],
+    selectedMonth: 'TEST'
   } // end state
 
   componentDidMount(){
     this.getMonths();
+    /// - test
+    this.setSelectedMonth( 'in app' );
   }
 
   getMonths = () =>{
@@ -30,14 +33,22 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Select a Month</h1>
-          <h3>SELECTED MONTH GOES HERE</h3>
+          <h3>{ this.state.selectedMonth }</h3>
           <br/>
         </header>
         <br/>
-        <MonthList months={ this.state.months }/>
+        <MonthList months={ this.state.months } setSelectedMonth={ this.setSelectedMonth }/>
       </div>
-    );
-  }
-}
+    ); // end return
+  } // end render
+
+  setSelectedMonth = ( monthToShow ) =>{
+    console.log( 'in setSelectedMonth:', monthToShow );
+    this.setState({
+      selectedMonth: monthToShow
+    }); 
+  } // end setSelectedMonth
+
+} // end class
 
 export default App;

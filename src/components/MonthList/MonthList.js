@@ -7,9 +7,10 @@ class MonthList extends Component{
             <div>
                 <p>MonthList</p>
                 <ul>
-                    { this.props.months.map( ( month )=><li key={ month.id }><MonthItem month={month}/></li> ) }
+                    { this.props.months.map( ( month )=><li key={ month.id }>
+                            <MonthItem month={month} setSelectedMonth={ this.props.setSelectedMonth }/>
+                        </li> ) }
                 </ul>
-                
             </div>
         ) // end return
     } // // render
