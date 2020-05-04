@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import MonthList from '../MonthList/MonthList';
+import Header from '../Header/Header';
 
 class App extends Component {
 
@@ -31,11 +32,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Select a Month</h1>
-          <h3>{ this.state.selectedMonth }</h3>
-          <br/>
-        </header>
+        <Header selectedMonth={ this.state.selectedMonth }/>
         <br/>
         <MonthList months={ this.state.months } setSelectedMonth={ this.setSelectedMonth }/>
       </div>
