@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class MonthItem extends Component{
     render(){
         return(
-            <div>
-                <p>MonthItem</p>
-            </div>
+            <span>{ this.props.month.name }</span>
         ) // end return
     } // // render
 } // end class
