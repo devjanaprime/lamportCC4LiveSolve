@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
 class MonthItem extends Component{
+
+    monthClick = () =>{
+        alert( 'in monthClick: ' + this.props.month.name );
+    }
+
     render(){
         return(
-            <span>{ this.props.month.name }</span>
+            <span onClick={ this.monthClick }>{ this.props.month.name }</span>
         ) // end return
     } // // render
 } // end class
